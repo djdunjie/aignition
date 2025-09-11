@@ -1,6 +1,6 @@
 # AIgnition
 
-AIgnition is a simple web platform created as part of a 9-month university project.  
+AIgnition is a simple web platform created as part of a university project.  
 The project demonstrates how businesses can explore AI solutions, starting with a simple landing page.
 
 ---
