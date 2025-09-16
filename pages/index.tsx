@@ -20,18 +20,37 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-                  Enterprise AI Pathfinder
+                  Empower your business with AI solutions.
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
                   Discover how AI can radically transform your operations.
                 </p>
-              </div>
-              <div className="flex justify-center">
-                {/* Placeholder rectangle for hero image */}
-                <div className="w-full max-w-md lg:max-w-lg h-64 lg:h-80 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500 text-lg">Hero Image Placeholder</span>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    Get Started
+                  </button>
+                  <button className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                    Learn More
+                  </button>
                 </div>
               </div>
+              <div className="flex justify-center">
+                {/* Placeholder with X as per wireframe */}
+                <div className="w-full max-w-md lg:max-w-lg h-64 lg:h-80 bg-gray-200 border-2 border-gray-300 rounded-lg flex items-center justify-center relative">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Below hero text */}
+            <div className="text-center mt-12">
+              <p className="text-gray-600">
+                Join other enterprises embarking on their own AI odysseys.
+              </p>
             </div>
           </div>
         </section>
@@ -47,8 +66,10 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {/* Interactive Personalised Roadmap */}
               <div className="bg-white p-6 lg:p-8 rounded-lg shadow-sm text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-blue-600 text-2xl">🗺️</span>
+                <div className="w-full h-32 bg-gray-200 border-2 border-gray-300 rounded-lg flex items-center justify-center mb-6 relative">
+                  <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Interactive Personalised Roadmap</h3>
                 <p className="text-gray-600">
@@ -58,8 +79,10 @@ export default function Home() {
 
               {/* Curated Newsfeed */}
               <div className="bg-white p-6 lg:p-8 rounded-lg shadow-sm text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-green-600 text-2xl">📰</span>
+                <div className="w-full h-32 bg-gray-200 border-2 border-gray-300 rounded-lg flex items-center justify-center mb-6 relative">
+                  <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Curated Newsfeed</h3>
                 <p className="text-gray-600">
@@ -69,8 +92,10 @@ export default function Home() {
 
               {/* Veronica */}
               <div className="bg-white p-6 lg:p-8 rounded-lg shadow-sm text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-purple-600 text-2xl">🤖</span>
+                <div className="w-full h-32 bg-gray-200 border-2 border-gray-300 rounded-lg flex items-center justify-center mb-6 relative">
+                  <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Veronica</h3>
                 <p className="text-gray-600">
@@ -81,20 +106,31 @@ export default function Home() {
           </div>
         </section>
 
-        {/* How to Start Your AI Transformation - Wireframe Layout */}
-        <section className="bg-white py-12 lg:py-20">
+        {/* Click Here Section */}
+        <section className="bg-white py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="w-full h-24 bg-gray-100 border-2 border-gray-300 rounded-lg flex items-center justify-center">
+              <span className="text-2xl font-bold text-gray-700">click here</span>
+            </div>
+          </div>
+        </section>
+
+        {/* How to Start Your AI Transformation */}
+        <section className="bg-gray-50 py-12 lg:py-20">
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
             {/* LEFT: image + caption */}
             <div>
-              <div className="aspect-[4/3] rounded-lg border bg-gray-100 flex items-center justify-center text-gray-400 mb-4">
-                <span>Image</span>
+              <div className="aspect-[4/3] rounded-lg border-2 border-gray-300 bg-gray-200 flex items-center justify-center text-gray-400 mb-4 relative">
+                <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">How to start your AI transformation</h2>
               <p className="text-sm text-gray-600 mb-4">
-                Stay in step with our company news. Sign up for our newsletter and receive the freshest info.
+                Stay in loop with our company news, Sign up to our newsletter and receive the freshest info.
               </p>
               <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                Learn More
+                Let's Go
               </button>
             </div>
 
@@ -103,12 +139,12 @@ export default function Home() {
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Step 1</h4>
                 <p className="text-gray-700 mb-3">Connect with our experts for an introduction.</p>
-                <div className="h-px bg-gray-200" />
+                <div className="h-px bg-gray-300" />
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Step 2</h4>
                 <p className="text-gray-700 mb-3">Receive a tailored plan based on your needs.</p>
-                <div className="h-px bg-gray-200" />
+                <div className="h-px bg-gray-300" />
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Step 3</h4>
@@ -118,26 +154,28 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Learn AI Concepts Section */}
-        <section className="bg-gray-50 py-12 lg:py-20">
+        {/* AIgnition Academy Section */}
+        <section className="bg-white py-12 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div className="text-center lg:text-left">
+                <p className="text-sm text-blue-600 mb-2 italic">AIgnition Academy</p>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Learn AI Concepts
+                  Learn AI concepts smartly
                 </h2>
                 <p className="text-gray-600 mb-8 text-lg">
-                  Stay ahead of the curve by learning key AI concepts. From machine learning to deep learning, 
-                  explore simplified guides and practical examples.
+                  Access a trove of educational resources, included articles, tutorials and interactive content to deepen your understanding of AI.
                 </p>
                 <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                  Learn More
+                  Begin
                 </button>
               </div>
               <div className="flex justify-center">
                 {/* Placeholder image */}
-                <div className="w-full max-w-md lg:max-w-lg h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500 text-lg">Learn AI Concepts Image</span>
+                <div className="w-full max-w-md lg:max-w-lg h-64 bg-gray-200 border-2 border-gray-300 rounded-lg flex items-center justify-center relative">
+                  <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -145,104 +183,102 @@ export default function Home() {
         </section>
 
         {/* User Experiences */}
-        <section className="bg-white py-12 lg:py-20">
+        <section className="bg-gray-50 py-12 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 User Experiences
               </h2>
+              <p className="text-gray-600 text-lg">
+                Discover how AI has changed enterprises.
+              </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {/* Testimonial 1 */}
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="flex mb-4">
+              <div className="bg-white p-6 rounded-lg text-center">
+                <p className="text-gray-600 mb-4 italic">
+                  "Since using AIgnition, we've completely overhauled our operations."
+                </p>
+                <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-400 text-lg">★</span>
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4">
-                  "AIgnition gave us the tools to start our AI journey with confidence."
-                </p>
-                <div className="text-sm text-gray-500">
-                  - Sarah Johnson, CEO
-                </div>
+                <div className="font-semibold text-gray-900">Alex Turner</div>
+                <div className="text-sm text-gray-500">Operations Lead, TechnoWaltz</div>
               </div>
 
               {/* Testimonial 2 */}
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="flex mb-4">
+              <div className="bg-white p-6 rounded-lg text-center">
+                <p className="text-gray-600 mb-4 italic">
+                  "A game changer in our strategy for navigating these turbulent times."
+                </p>
+                <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-400 text-lg">★</span>
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4">
-                  "Clear steps and guidance made it easy for our team to adopt AI."
-                </p>
-                <div className="text-sm text-gray-500">
-                  - Mike Chen, CTO
-                </div>
+                <div className="font-semibold text-gray-900">Ashley Wong</div>
+                <div className="text-sm text-gray-500">Senior Vice President, InnovateCo</div>
               </div>
 
               {/* Testimonial 3 */}
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="flex mb-4">
+              <div className="bg-white p-6 rounded-lg text-center">
+                <p className="text-gray-600 mb-4 italic">
+                  "Insanely invaluable insights for us."
+                </p>
+                <div className="flex justify-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-400 text-lg">★</span>
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4">
-                  "We transformed our operations in less than six months."
-                </p>
-                <div className="text-sm text-gray-500">
-                  - Lisa Davis, Director
-                </div>
+                <div className="font-semibold text-gray-900">Novia Chan</div>
+                <div className="text-sm text-gray-500">CEO, RoboNexus</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Blog Section */}
-        <section className="bg-gray-50 py-12 lg:py-20">
+        <section className="bg-white py-12 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Latest from Our Blog
+                Blog
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {/* Blog Post 1 */}
-              <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-                <div className="h-48 bg-gray-200 flex items-center justify-center">
-                  <span className="text-gray-500">Blog Image Placeholder</span>
+              <div className="bg-gray-50 rounded-lg overflow-hidden">
+                <div className="h-48 bg-gray-200 border-2 border-gray-300 flex items-center justify-center relative">
+                  <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    The Future of AI in Business
+                    Evolutionary AI algorithms herald a paradigm shift
                   </h3>
-                  <p className="text-gray-600 mb-4">
-                    Exploring how companies use AI to stay competitive in today's rapidly evolving market landscape.
+                  <p className="text-gray-600 italic">
+                    Company news
                   </p>
-                  <a href="#" className="text-blue-600 font-medium hover:text-blue-700">
-                    Read More →
-                  </a>
                 </div>
               </div>
 
               {/* Blog Post 2 */}
-              <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-                <div className="h-48 bg-gray-200 flex items-center justify-center">
-                  <span className="text-gray-500">Blog Image Placeholder</span>
+              <div className="bg-gray-50 rounded-lg overflow-hidden">
+                <div className="h-48 bg-gray-200 border-2 border-gray-300 flex items-center justify-center relative">
+                  <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    Getting Started with AI the Right Way
+                    Protecting the endangered species known as fresh grads
                   </h3>
-                  <p className="text-gray-600 mb-4">
-                    Practical advice for beginners looking to implement AI solutions in their business operations.
+                  <p className="text-gray-600 italic">
+                    The darkside of AI disruptions in the modern day workforce
                   </p>
-                  <a href="#" className="text-blue-600 font-medium hover:text-blue-700">
-                    Read More →
-                  </a>
                 </div>
               </div>
             </div>
@@ -250,24 +286,21 @@ export default function Home() {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="bg-blue-600 py-12 lg:py-20">
+        <section className="bg-gray-50 py-12 lg:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
-                Stay Updated with AI Trends
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
+                Newsletter
               </h2>
-              <p className="text-blue-100 mb-8 text-lg max-w-2xl mx-auto">
-                Subscribe to get the latest updates on AI trends, guides, and case studies.
-              </p>
               <div className="max-w-md mx-auto">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <input
                     type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-blue-300 focus:outline-none"
+                    placeholder="Input field"
+                    className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 focus:outline-none"
                   />
-                  <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
-                    Subscribe
+                  <button className="bg-gray-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors whitespace-nowrap">
+                    Button
                   </button>
                 </div>
               </div>

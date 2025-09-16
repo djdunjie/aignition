@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
-  const navItems = ['About', 'News', 'Veronica', 'Roadmap', 'AIgnition Academy', 'Use Cases']
+  const footerLinks = ['Home', 'About', 'Privacy Policy', 'Terms of Service', 'Contact']
 
   return (
     <footer className="bg-gray-50 border-t">
@@ -23,9 +23,9 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Center: Navigation Links */}
+          {/* Center: Footer Links */}
           <div className="flex flex-wrap justify-center gap-4 lg:gap-6">
-            {navItems.map((item) => (
+            {footerLinks.map((item) => (
               <Link
                 key={item}
                 href="#"
@@ -36,14 +36,20 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Right: Empty space */}
-          <div className="hidden lg:block"></div>
+          {/* Right: Dropdown placeholder */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <select className="bg-white border border-gray-300 rounded-lg px-4 py-2 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <option>Dropdown</option>
+              </select>
+            </div>
+          </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-gray-200 text-center">
           <p className="text-sm text-gray-500">
-            2025 AIgnition. All rights reserved.
+            &copy; 2025 AIgnition. All rights reserved.
           </p>
         </div>
       </div>
