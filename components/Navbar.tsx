@@ -16,21 +16,33 @@ export default function Navbar() {
         </Link>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          {navItems.map((item) => (
-            <Link 
-              key={item} 
-              href="#" 
-              className={`transition-colors ${
-                item === activeItem 
-                  ? 'text-blue-600 underline underline-offset-4' 
-                  : 'hover:text-blue-600 hover:underline underline-offset-4'
-              }`}
-            >
-              {item}
+        <div className="hidden md:flex items-center space-x-8">
+          <nav className="flex space-x-8">
+            {navItems.map((item) => (
+              <Link 
+                key={item} 
+                href="#" 
+                className={`transition-colors ${
+                  item === activeItem 
+                    ? 'text-blue-600 underline underline-offset-4' 
+                    : 'hover:text-blue-600 hover:underline underline-offset-4'
+                }`}
+              >
+                {item}
+              </Link>
+            ))}
+          </nav>
+          
+          {/* Auth buttons */}
+          <div className="flex items-center space-x-4 ml-8">
+            <Link href="#" className="text-gray-700 hover:text-blue-600 transition-colors">
+              LOG IN
             </Link>
-          ))}
-        </nav>
+            <Link href="#" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+              SIGN UP
+            </Link>
+          </div>
+        </div>
 
         {/* Mobile menu button */}
         <button
@@ -66,6 +78,24 @@ export default function Navbar() {
                 {item}
               </Link>
             ))}
+            
+            {/* Mobile auth buttons */}
+            <div className="border-t border-gray-200 pt-3 mt-3 space-y-2">
+              <Link
+                href="#"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                LOG IN
+              </Link>
+              <Link
+                href="#"
+                className="block mx-3 py-2 px-4 text-base font-medium bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                SIGN UP
+              </Link>
+            </div>
           </div>
         </div>
       )}

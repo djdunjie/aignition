@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AIgnition - Empower your business with AI solutions</title>
-        <meta name="description" content="Join forward-thinking companies on their journey to AI transformation" />
+        <title>Enterprise AI Pathfinder</title>
+        <meta name="description" content="Enterprise AI Pathfinder — discover how AI can transform your enterprise operations." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
@@ -20,10 +20,10 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div className="text-center lg:text-left">
                 <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-                  Empower your business with AI solutions.
+                  Enterprise AI Pathfinder
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-                  Join forward-thinking companies on their journey to AI transformation.
+                  Discover how AI can radically transform your operations.
                 </p>
               </div>
               <div className="flex justify-center">
@@ -45,36 +45,36 @@ export default function Home() {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {/* Neural Networks */}
+              {/* Interactive Personalised Roadmap */}
               <div className="bg-white p-6 lg:p-8 rounded-lg shadow-sm text-center">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-blue-600 text-2xl">🧠</span>
+                  <span className="text-blue-600 text-2xl">🗺️</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Neural Networks</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Interactive Personalised Roadmap</h3>
                 <p className="text-gray-600">
-                  Unlock new levels of automation and intelligence.
+                  Evaluate and chart your enterprise journey with us!
                 </p>
               </div>
 
-              {/* Convolutional Networks */}
+              {/* Curated Newsfeed */}
               <div className="bg-white p-6 lg:p-8 rounded-lg shadow-sm text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-green-600 text-2xl">🔗</span>
+                  <span className="text-green-600 text-2xl">📰</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Convolutional Networks</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Curated Newsfeed</h3>
                 <p className="text-gray-600">
-                  Powering next-generation image and video analysis.
+                  Specially selected content across the web
                 </p>
               </div>
 
-              {/* Vision Models */}
+              {/* Veronica */}
               <div className="bg-white p-6 lg:p-8 rounded-lg shadow-sm text-center">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-purple-600 text-2xl">👁️</span>
+                  <span className="text-purple-600 text-2xl">🤖</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Vision Models</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Veronica</h3>
                 <p className="text-gray-600">
-                  Helping businesses make sense of visual data.
+                  Meet our amazing chatbot to aid you.
                 </p>
               </div>
             </div>
