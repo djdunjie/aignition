@@ -307,6 +307,55 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Upcoming Events */}
+        <section className="bg-white py-12 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+              {/* Event 1 */}
+              <div className="border-2 border-gray-300 rounded-lg p-6 flex items-start gap-4">
+                <div className="text-center min-w-[72px]">
+                  <div className="text-3xl font-bold text-gray-900 leading-none">24</div>
+                  <div className="text-sm uppercase tracking-wide text-gray-600">SEP</div>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-gray-700 mb-1">Workshop</div>
+                  <div className="text-gray-900 font-medium">
+                    Product Development and Manufacturing of IVDs and SaMD: Validation and Verification
+                  </div>
+                </div>
+              </div>
+
+              {/* Event 2 */}
+              <div className="border-2 border-gray-300 rounded-lg p-6 flex items-start gap-4">
+                <div className="text-center min-w-[72px]">
+                  <div className="text-3xl font-bold text-gray-900 leading-none">30</div>
+                  <div className="text-sm uppercase tracking-wide text-gray-600">SEP</div>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-gray-700 mb-1">Seminar</div>
+                  <div className="text-gray-900 font-medium">
+                    World Global AI Innovation Summit Keynote Address
+                  </div>
+                </div>
+              </div>
+
+              {/* Event 3 */}
+              <div className="border-2 border-gray-300 rounded-lg p-6 flex items-start gap-4">
+                <div className="text-center min-w-[72px]">
+                  <div className="text-3xl font-bold text-gray-900 leading-none">16</div>
+                  <div className="text-sm uppercase tracking-wide text-gray-600">OCT</div>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-gray-700 mb-1">APAC AI Talent Conference</div>
+                  <div className="text-gray-900 font-medium">
+                    Best practices and showcase of successful AI transformation by SMEs and enterprises alike
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
