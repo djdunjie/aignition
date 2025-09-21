@@ -10,12 +10,14 @@ export default function Navbar() {
   const navItems = ['About', 'News', 'Veronica', 'Roadmap', 'AIgnition Academy', 'Use Cases']
   const getHref = (item: string) => {
     if (item === 'About') return '/about'
+    if (item === 'AIgnition Academy') return '/terminology'
     // keep other links dead for now
     return '#'
   }
 
   const isActive = (item: string) => {
     if (item === 'About') return router.pathname === '/about'
+    if (item === 'AIgnition Academy') return router.pathname === '/terminology'
     return false
   }
 
