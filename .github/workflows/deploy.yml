@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           # Remove this line if FTPS isn't enabled on your plan
           protocol: ftps
-          local-dir: ./out
+          local-dir: ./out/
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
           # Set to true only when you want a full clean deploy
           dangerous-clean-slate: false
