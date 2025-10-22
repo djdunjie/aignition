@@ -1,7 +1,7 @@
 # AIgnition
 
 AIgnition is a simple web platform created as part of a university project.  
-The project demonstrates how businesses can explore AI solutions, starting with a simple landing page.
+The project demonstrates how businesses can explore AI solutions, starting with a landing page.
 
 ---
 
@@ -14,41 +14,81 @@ The project demonstrates how businesses can explore AI solutions, starting with 
 
 ## 📦 Getting Started
 
-### 1. Clone the Repository
+### 1) Clone the repository
 ```bash
-git clone https://github.com/<your-username>/aignition.git
+git clone https://github.com/djdunjie/aignition.git
 cd aignition
-```
+````
 
-### 2. Install Dependencies
+### 2) Install dependencies
 
 ```bash
-npm install
+npm ci   # or: npm install
 ```
 
-### 3. Run Locally
+### 3) Run locally
 
 ```bash
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) in your browser.
+Visit [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🌐 Deployment
+## 🌐 Deployment (Hostinger, static export)
 
-This project is designed to be hosted on [Vercel](https://vercel.com/):
+This project is configured for **static export** and hosted on **Hostinger Business Web Hosting**.
 
-1. Push your repository to GitHub.
-2. Connect the repo to Vercel.
-3. Vercel will auto-deploy on every push to `main`.
+### Build
 
-### Custom Domain
+```bash
+npm run build
+```
 
-* Purchase a domain from [Namecheap](https://www.namecheap.com/).
-* In Namecheap, set DNS records to point to your Vercel project.
-* Verify and link the domain in the Vercel dashboard.
+This generates a static site in `/out`.
+
+### Manual deploy (fallback)
+
+1. Zip the **contents** of `/out` (files inside, not the folder itself).
+2. Hostinger → Files → File Manager → `public_html/`
+3. Upload the ZIP and **Extract** (tick “Overwrite existing files”).
+4. Visit [https://aignition.org](https://aignition.org) (hard refresh if needed).
+
+### CI deploy (recommended)
+
+GitHub Actions automatically builds & deploys on every push to `main`:
+
+* Workflow: `.github/workflows/deploy.yml`
+* Secrets required (Repository → Settings → Secrets and variables → Actions):
+
+  * `FTP_SERVER` – Hostinger FTP hostname/IP
+  * `FTP_USERNAME` – your FTP user
+  * `FTP_PASSWORD` – FTP password (set/reset in Hostinger)
+  * `FTP_REMOTE_DIR` – `/public_html`
+
+The workflow runs:
+
+* `npm ci`
+* `npm run build` (which runs `next build && next export`)
+* Uploads the contents of `/out` to `/public_html` via FTP/FTPS.
+
+> **Note**
+>
+> * To completely clean old files after a major restructure, set `dangerous-clean-slate: true` for one run, then switch it back to `false`.
+> * Since this is a static export, avoid SSR-only features (API routes, `getServerSideProps`, image optimization).
+> * `next.config.js` sets `images.unoptimized = true` for export compatibility.
+
+---
+
+## 🔁 Release Checklist
+
+1. `git pull`
+2. `npm ci`
+3. Make changes & test locally
+4. `git commit -m "feat/fix: ..."` → `git push`
+5. GitHub → Actions → verify **Deploy static site to Hostinger** succeeds
+6. Visit [https://aignition.org](https://aignition.org) and hard refresh (Ctrl/Cmd+Shift+R)
 
 ---
 
@@ -57,9 +97,10 @@ This project is designed to be hosted on [Vercel](https://vercel.com/):
 ```
 aignition/
  ├─ components/      # Reusable UI components
- ├─ pages/           # Next.js pages (index.tsx = Landing)
+ ├─ pages/           # Next.js pages
+ ├─ public/          # Static assets (logo.png, favicon.ico, etc.)
  ├─ styles/          # Global styles
- ├─ public/          # Static assets (logo.png, favicon.ico, images, etc.)
+ ├─ .github/workflows/deploy.yml  # CI deploy to Hostinger
  ├─ package.json
  └─ README.md
 ```

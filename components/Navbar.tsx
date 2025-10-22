@@ -25,7 +25,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur">
       <div className="container mx-auto h-14 px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <Image src="/logo.png" alt="AIgnition logo" width={210} height={50} className="w-auto" priority />
+        <Image src="/logo.png" alt="AIgnition logo" width={210} height={60} className="h-auto" priority />
         </Link>
         
         {/* Desktop Navigation + Auth */}

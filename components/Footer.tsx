@@ -12,14 +12,13 @@ export default function Footer() {
           {/* Left: Logo */}
           <div className="flex justify-center lg:justify-start">
             <Link href="/" className="flex items-center">
-              <Image 
-                src="/logo.png" 
-                alt="AIgnition logo" 
-                width={210} 
-                height={50} 
-                className="w-auto" 
-                priority 
-              />
+            <Image 
+              src="/logo.png" 
+              alt="AIgnition logo" 
+              width={210} 
+              height={60} 
+              className="h-auto" 
+            />
             </Link>
           </div>
 
