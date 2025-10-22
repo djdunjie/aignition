@@ -39,6 +39,38 @@ export default function About() {
         description: 'Reach out to us!',
         action: 'Get in touch'
       }
+    ],
+    technical: [
+      {
+        title: 'Machine Learning Engineer',
+        description: 'Build and deploy ML models at scale using modern frameworks and tools.',
+        action: 'Discover more'
+      },
+      {
+        title: 'MLOps Engineer',
+        description: 'Manage ML infrastructure and deployment pipelines for production systems.',
+        action: 'Discover more'
+      },
+      {
+        title: 'Data Engineer',
+        description: 'Design and maintain data pipelines and infrastructure for AI applications.',
+        action: 'Discover more'
+      },
+      {
+        title: 'Research Scientist',
+        description: 'Conduct cutting-edge AI research and develop novel algorithms.',
+        action: 'Discover more'
+      },
+      {
+        title: 'AI Platform Engineer',
+        description: 'Build and maintain scalable AI platforms and tools.',
+        action: 'Discover more'
+      },
+      {
+        title: "Can't find the role you want?",
+        description: 'Reach out to us!',
+        action: 'Get in touch'
+      }
     ]
   }
 
