@@ -1,78 +1,40 @@
 import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Link from 'next/link'
-import { useState } from 'react'
 
 export default function About() {
-  const [activeTab, setActiveTab] = useState<'management' | 'technical'>('management')
-
-  const jobRoles = {
-    management: [
-      {
-        title: 'AI Product Designer',
-        description: 'Design and optimize AI model solutions for various applications.',
-        action: 'Discover more'
-      },
-      {
-        title: 'AI Engineer',
-        description: 'Design and optimize AI model solutions for various applications.',
-        action: 'Discover more'
-      },
-      {
-        title: 'AI Project Lead',
-        description: 'Manages AI projects as a consultant, ensuring timely delivery and quality.',
-        action: 'Discover more'
-      },
-      {
-        title: 'Data Scientist',
-        description: 'Developing powerful models and algorithms to drive the next-gen of solutions.',
-        action: 'Discover more'
-      },
-      {
-        title: 'AI Analyst',
-        description: 'Evaluates AI performance and suggests improvements.',
-        action: 'Discover more'
-      },
-      {
-        title: "Can't find the role you want?",
-        description: 'Reach out to us!',
-        action: 'Get in touch'
-      }
-    ],
-    technical: [
-      {
-        title: 'Machine Learning Engineer',
-        description: 'Build and deploy ML models at scale using modern frameworks and tools.',
-        action: 'Discover more'
-      },
-      {
-        title: 'MLOps Engineer',
-        description: 'Manage ML infrastructure and deployment pipelines for production systems.',
-        action: 'Discover more'
-      },
-      {
-        title: 'Data Engineer',
-        description: 'Design and maintain data pipelines and infrastructure for AI applications.',
-        action: 'Discover more'
-      },
-      {
-        title: 'Research Scientist',
-        description: 'Conduct cutting-edge AI research and develop novel algorithms.',
-        action: 'Discover more'
-      },
-      {
-        title: 'AI Platform Engineer',
-        description: 'Build and maintain scalable AI platforms and tools.',
-        action: 'Discover more'
-      },
-      {
-        title: "Can't find the role you want?",
-        description: 'Reach out to us!',
-        action: 'Get in touch'
-      }
-    ]
-  }
+  const jobRoles = [
+    {
+      title: 'AI Product Designer',
+      description: 'Design and optimize AI model solutions for various applications.',
+      action: 'Discover more'
+    },
+    {
+      title: 'AI Engineer',
+      description: 'Design and optimize AI model solutions for various applications.',
+      action: 'Discover more'
+    },
+    {
+      title: 'AI Project Lead',
+      description: 'Manages AI projects as a consultant, ensuring timely delivery and quality.',
+      action: 'Discover more'
+    },
+    {
+      title: 'Data Scientist',
+      description: 'Developing powerful models and algorithms to drive the next-gen of solutions.',
+      action: 'Discover more'
+    },
+    {
+      title: 'AI Analyst',
+      description: 'Evaluates AI performance and suggests improvements.',
+      action: 'Discover more'
+    },
+    {
+      title: "Can't find the role you want?",
+      description: 'Reach out to us!',
+      action: 'Get in touch'
+    }
+  ]
 
   return (
     <>
@@ -172,33 +134,9 @@ export default function About() {
             <p className="text-gray-600 mb-8 text-center">
               We're looking for passionate and like-minded individuals to transform the world.
             </p>
-            
-            {/* Management / Technical tabs */}
-            <div className="flex justify-center items-center gap-4 mb-8">
-              <Link
-                href="/about"
-                className={`border rounded px-6 py-2 transition-colors ${
-                  activeTab === 'management'
-                    ? 'bg-gray-900 text-white border-gray-900'
-                    : 'border-gray-300 text-gray-700 hover:bg-gray-50'
-                }`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  setActiveTab('management')
-                }}
-              >
-                Management
-              </Link>
-              <Link
-                href="/terminology"
-                className="border border-gray-300 rounded px-6 py-2 text-gray-700 hover:bg-gray-50 transition-colors"
-              >
-                Technical
-              </Link>
-            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {jobRoles[activeTab].map((role, idx) => (
+              {jobRoles.map((role, idx) => (
                 <div key={idx} className="border-2 border-gray-300 rounded-lg p-5 bg-white">
                   <h4 className="font-semibold text-gray-900 mb-2">{role.title}</h4>
                   <p className="text-gray-600 mb-4 text-sm">
