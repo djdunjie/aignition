@@ -1,23 +1,52 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { getSession, signOut } from '@/lib/authUtils'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const router = useRouter()
+
+  useEffect(() => {
+    const checkAuth = () => {
+      const session = getSession()
+      setIsAuthenticated(!!session)
+    }
+    
+    checkAuth()
+    
+    const handleRouteChange = () => {
+      checkAuth()
+    }
+    
+    router.events?.on('routeChangeComplete', handleRouteChange)
+    
+    return () => {
+      router.events?.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router])
+
+  const handleLogout = () => {
+    signOut()
+    setIsAuthenticated(false)
+    setIsMenuOpen(false)
+    router.push('/')
+  }
 
   const navItems = ['About', 'News', 'Veronica', 'Roadmap', 'AIgnition Academy', 'Use Cases']
   const getHref = (item: string) => {
     if (item === 'About') return '/about'
+    if (item === 'Veronica') return '/veronica'
     if (item === 'AIgnition Academy') return '/terminology'
     if (item === 'Use Cases') return '/use-cases'
-    // keep other links dead for now
     return '#'
   }
 
   const isActive = (item: string) => {
     if (item === 'About') return router.pathname === '/about'
+    if (item === 'Veronica') return router.pathname === '/veronica'
     if (item === 'AIgnition Academy') return router.pathname === '/terminology'
     if (item === 'Use Cases') return router.pathname === '/use-cases'
     return false
@@ -50,12 +79,23 @@ export default function Navbar() {
           
           {/* Auth buttons */}
           <div className="flex items-center space-x-3 ml-6">
-            <Link href="#" className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors font-medium">
-              LOG IN
-            </Link>
-            <Link href="/signup" className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-semibold">
-              SIGN UP
-            </Link>
+            {isAuthenticated ? (
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors font-medium"
+              >
+                LOG OUT
+              </button>
+            ) : (
+              <>
+                <Link href="/login" className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors font-medium">
+                  LOG IN
+                </Link>
+                <Link href="/signup" className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-semibold">
+                  SIGN UP
+                </Link>
+              </>
+            )}
           </div>
         </div>
 
@@ -96,20 +136,31 @@ export default function Navbar() {
 
             {/* Mobile auth buttons */}
             <div className="border-t border-gray-200 pt-3 mt-3 space-y-2">
-              <Link
-                href="#"
-                className="block mx-3 py-2 px-4 text-base font-medium border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                LOG IN
-              </Link>
-              <Link
-                href="/signup"
-                className="block mx-3 py-2 px-4 text-base font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                SIGN UP
-              </Link>
+              {isAuthenticated ? (
+                <button
+                  onClick={handleLogout}
+                  className="block mx-3 py-2 px-4 text-base font-medium border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-center w-[calc(100%-1.5rem)]"
+                >
+                  LOG OUT
+                </button>
+              ) : (
+                <>
+                  <Link
+                    href="/login"
+                    className="block mx-3 py-2 px-4 text-base font-medium border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-center"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    LOG IN
+                  </Link>
+                  <Link
+                    href="/signup"
+                    className="block mx-3 py-2 px-4 text-base font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    SIGN UP
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

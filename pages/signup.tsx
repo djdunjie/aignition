@@ -2,24 +2,52 @@ import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { useState, FormEvent } from 'react'
+import { useRouter } from 'next/router'
+import { signUp } from '@/lib/authUtils'
 
 export default function SignUp() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
+    displayName: '',
     password: '',
     industry: '',
     jobRole: '',
     countryRegion: ''
   })
+  const [error, setError] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    // Firebase authentication will be integrated here
-    console.log('Form submitted:', formData)
+    setError('')
+    setIsSubmitting(true)
+
+    try {
+      const result = await signUp(
+        formData.username,
+        formData.displayName,
+        formData.password,
+        formData.industry,
+        formData.jobRole,
+        formData.countryRegion
+      )
+
+      if (result.success) {
+        router.push('/veronica')
+      } else {
+        setError(result.error || 'Sign up failed')
+      }
+    } catch (err) {
+      setError('An unexpected error occurred')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
+    if (error) setError('')
   }
 
   return (
@@ -42,16 +70,37 @@ export default function SignUp() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
               {/* Left: Form */}
               <div className="w-full max-w-md mx-auto lg:mx-0">
+                {error && (
+                  <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md text-red-700 text-sm">
+                    {error}
+                  </div>
+                )}
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">
+                      Username
+                    </label>
+                    <input
+                      type="text"
+                      id="username"
+                      value={formData.username}
+                      onChange={(e) => handleInputChange('username', e.target.value)}
+                      placeholder="Input field"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                      required
+                      minLength={3}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="displayName" className="block text-sm font-medium text-gray-700 mb-2">
                       Name
                     </label>
                     <input
                       type="text"
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      id="displayName"
+                      value={formData.displayName}
+                      onChange={(e) => handleInputChange('displayName', e.target.value)}
                       placeholder="Input field"
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                       required
@@ -70,6 +119,7 @@ export default function SignUp() {
                       placeholder="Input field"
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                       required
+                      minLength={8}
                     />
                   </div>
 
@@ -120,9 +170,10 @@ export default function SignUp() {
 
                   <button
                     type="submit"
-                    className="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-md text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full px-6 py-3 bg-white border-2 border-gray-300 rounded-md text-gray-700 font-medium hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Sign Up
+                    {isSubmitting ? 'Signing Up...' : 'Sign Up'}
                   </button>
                 </form>
               </div>

@@ -1,0 +1,31 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users collection rules
+    match /users/{userId} {
+      // Allow anyone to create a new user document (for sign up)
+      allow create: if request.resource.data.keys().hasAll(['username', 'displayName', 'passwordHash', 'industry', 'jobRole', 'countryRegion', 'createdAt', 'updatedAt'])
+                    && request.resource.data.username is string
+                    && request.resource.data.displayName is string
+                    && request.resource.data.passwordHash is string
+                    && request.resource.data.industry is string
+                    && request.resource.data.jobRole is string
+                    && request.resource.data.countryRegion is string;
+      
+      // Allow anyone to read user documents (needed for login username lookup)
+      // In production, you might want to restrict this further
+      allow read: if true;
+      
+      // Allow users to update their own document
+      allow update: if request.auth != null && request.auth.uid == userId;
+      
+      // Prevent deletion for now
+      allow delete: if false;
+    }
+    
+    // Deny all other collections by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
