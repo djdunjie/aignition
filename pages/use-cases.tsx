@@ -43,14 +43,14 @@ export default function UseCases() {
   const leftColumnCases: UseCaseCardProps[] = [
     {
       industry: 'Banking & Finance',
-      company: 'JP Morgan Chase & Co.',
-      description: 'JP Morgan Chase is driving digital transformation by embedding artificial intelligence across its operations. The bank has developed "COiN," an AI platform that analyzes legal documents, saving over 360,000 hours annually. For wealth management, its "Coach AI" tool helped contribute to a 20% increase in gross sales by providing advisors with faster, data-driven insights.',
-      additionalText: 'By migrating its infrastructure to the cloud and deploying hundreds of AI use cases, from fraud detection to credit risk prediction, the bank has enhanced efficiency, improved risk management, and delivered significant financial value.'
+      company: 'JPMorgan Chase & Co.',
+      description: 'JPMorgan Chase is driving digital transformation by embedding artificial intelligence and machine learning into data science and its operations. The firm developed "COiN," an AI platform that analyzes legal documents and contracts, saving over 360,000 work hours annually. For wealth management, its "Coach AI" tool helped contribute to a 20% increase in gross sales by providing advisors with faster, data-driven insights.',
+      additionalText: 'By migrating its infrastructure to the cloud and deploying hundreds of AI use cases, from fraud detection to code generation, the bank has enhanced efficiency, improved risk management, and delivered significant financial value.'
     },
     {
       industry: 'Insurance',
       company: 'Lemonade Inc.',
-      description: 'Lemonade disrupts the insurance industry by building its model on AI and behavioral economics. It uses AI chatbots, "Maya" for onboarding and "Jim" for claims, to provide a digital-first experience. Customers can get insured in as little as 90 seconds, with AI handling a significant percentage of claims without human intervention.',
+      description: 'Lemonade disrupted the insurance industry by building its model on AI and behavioral economics. It uses AI chatbots, "Maya" for onboarding and "Jim" for claims, to provide a seamless, digital-first experience. Customers can get a policy in 90 seconds and have a claim processed in as little as three seconds, with AI handling a significant percentage of claims without human intervention.',
       additionalText: 'This AI-driven approach drastically reduces operational costs and enhances customer satisfaction, allowing Lemonade to offer competitive pricing and a highly efficient service.'
     }
   ]
@@ -59,13 +59,14 @@ export default function UseCases() {
     {
       industry: 'Educational Institutions',
       company: 'Georgia State University',
-      description: 'Georgia State University transformed its student support system using data and AI, implementing a chatbot called "Pounce" to answer questions and an advisor alert system called GPS Advising. This system proactively tracks 800 risk factors for every undergraduate student, triggering an alert to an advisor if a student is at-risk. With GPS Advising, the university prompts tens of thousands of proactive interventions annually. GSU also uses an AI chatbot, "Pounce," to answer routine questions of prospective students.',
+      description: 'Georgia State University transformed its student support system using predictive analytics to improve its graduation rates. The university implemented an advisor alert system called GPS Advising, which proactively tracks 800 risk factors for every undergraduate student, triggering an alert to an advisor if a student is at risk. This system, called GPS Advising, prompts tens of thousands of proactive interventions annually. GSU also uses an AI chatbot, "Pounce," to answer thousands of student queries.',
       additionalText: 'This data-driven approach has successfully eliminated achievement gaps based on race and income and significantly boosted graduation rates.'
     },
     {
       industry: 'Small Medium Enterprises (SMEs)',
       company: 'Ah Seng\'s Prata Shop',
-      description: 'Featured Success Story'
+      description: 'Hailing from humble origins in the now-modernised Kampung slums of Euros, this food & beverage establishment has revolutionised the world of prata by creating gold pratas that are not only edible, but can be kept as souvenirs or even family heirlooms. The gold pratas are not only visually stunning, but also incredibly delicious. To meet the overwhelming demand, they have implemented drone delivery services that projects these pratas into the houses of their customers, leading to many satisfied and loyal customers.',
+      additionalText: ''
     }
   ]
 

@@ -35,12 +35,13 @@ export default function Navbar() {
     router.push('/')
   }
 
-  const navItems = ['About', 'News', 'Veronica', 'Roadmap', 'AIgnition Academy', 'Use Cases']
+  const navItems = ['About', 'News', 'Veronica', 'Roadmap', 'AIgnition Academy', 'Use Cases', 'Impact Calculator']
   const getHref = (item: string) => {
     if (item === 'About') return '/about'
     if (item === 'Veronica') return '/veronica'
     if (item === 'AIgnition Academy') return '/terminology'
     if (item === 'Use Cases') return '/use-cases'
+    if (item === 'Impact Calculator') return '/impact-calculator'
     return '#'
   }
 
@@ -49,6 +50,7 @@ export default function Navbar() {
     if (item === 'Veronica') return router.pathname === '/veronica'
     if (item === 'AIgnition Academy') return router.pathname === '/terminology'
     if (item === 'Use Cases') return router.pathname === '/use-cases'
+    if (item === 'Impact Calculator') return router.pathname === '/impact-calculator'
     return false
   }
 
